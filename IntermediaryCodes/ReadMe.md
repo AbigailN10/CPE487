@@ -13,8 +13,16 @@
 
 ## Code 3
 - We basically scrapped our previous codes and started building from the bottom up.
--Random number generator: This is when we discovered that the uniform function does not work.
+- Random number generator: This is when we discovered that the uniform function does not work.
 - Delay: We changed from using the clk to add a delay to manually pressing the button to change between states.
 
 ## Code 4
+- Since the random number generator does not work, we decided to just display 8 predetermined numbers.
+- This code was created and debugged so we could display the sequence 1-by-1 when we press the BTNU button.
+
+## Code 5
+- 
+
+## Code 6
+- 
 

@@ -40,3 +40,5 @@ Behavior: This was the first successful "simple" game (although it took forever 
 
  ## Code 7
  This is the final code (see keypad.vhd)!
+ - We added the stage signal to determine which stage (like levels in a video game) we were at.
+ - We added the state, inter_success, to display '0AA0', differentiating between the end of a level and the end of the game.

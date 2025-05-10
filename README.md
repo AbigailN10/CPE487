@@ -5,7 +5,7 @@
 
 ![keypad](kypd.png)
 
-* The top level source module is called **_hexcalc_** that
+* The top level source module is called **_SimonSays_** that
   * Creates an instance of the keypad interface and 7-segment decoder interface modules
   * Make connection to the display, buttons, and external keypad
   * Has a timing process to generate [clock signals](https://en.wikipedia.org/wiki/Clock_signal) for the keypad, display multiplexer, and [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine)
@@ -20,9 +20,9 @@
 
 ### 1. Create a new RTL project _hexcalc_ in Vivado Quick Start
 
-* Create three new source files of file type VHDL called **_keypad_**, **_leddec16_**, and **_hexcalc_**
+* Create three new source files of file type VHDL called **_keypad_**, **_leddec16_**, and **_SimonSays_**
 
-* Create a new constraint file of file type XDC called **_hexcalc_**
+* Create a new constraint file of file type XDC called **_SimonSays_**
 
 * Choose Nexys A7-100T board for the project
 
@@ -49,6 +49,14 @@
 * Click 'Program Device' then xc7a100t_0 to download hexcalc.bit to the Nexys A7-100T board
 
 ### 5. Use keypad and buttons
+* Press BTNU to continuously advance through the game.
+* Watch the Nexys A7-100T board which will display a sequence of numbers.
+* When the left side of the board displays ‘dddd’, it is time for you to use the keypad.
+* Use the keypad to press the number(s) that was just displayed in order. If you correctly do so, then the Nexys A7-100T board will display ‘0AA0’ meaning success. Press * BTNU to continue playing the game and have the board continue displaying numbers that you will need to input on the keypad.
+* When the board displays ‘AAAA’, you have reached the end of the game and won.
+* If the board displays ‘FFFF’, you have reached the end of the game and lost.
+* Press BTNC to restart the game.
+
 
 ## Inputs and Outputs
 

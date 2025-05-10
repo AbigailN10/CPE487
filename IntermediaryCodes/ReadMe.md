@@ -33,7 +33,7 @@ Behavior: Board successfully compares the user input to the predetermined number
 - There were still some problems so we added lines 145 and 146 again and then it worked successfully.
 
 ## Code 6
-Bejavior: This was the first successful "simple" game (although it took forever to create). It displays 8 digits and then the user inputs 8 digits. It will show failure or success depending on whether the user correctly input the 8 digit sequence.
+Behavior: This was the first successful "simple" game (although it took forever to create). It displays 8 digits and then the user inputs 8 digits. It will show failure or success depending on whether the user correctly input the 8 digit sequence.
 - We combined code 4 and code 5.
 - At first, it was incorrectly going to the fail or success state. Additionally, pressing BTNC did not correctly go to the clear_all state. We eventually realized by looking at Lab 4 that for every 'if' statement, we need an 'else' statement (such as line 157 and 158). We also changed bt_next_edge to bt_next because if not, we were stuck at the clear_all state.
 - The one exception is in the gen_num state which had the opposite behavior for some reason. Trying the use bt_next and having an else statement made the board behave unexpectedly so we kept bt_next_edge and removed the else statement.

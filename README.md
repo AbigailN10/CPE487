@@ -1,4 +1,6 @@
 # CPE487 - Simon Says
+
+## Expected behavior of code
 * Program the FPGA on the Nexys A7-100T board to function as a Simon Says game using a 16-button keypad module ([Pmod KYPD](https://store.digilentinc.com/pmod-kypd-16-button-keypad/)) connected to the Pmod port JA (See Section 10 of the [Reference Manual](https://reference.digilentinc.com/_media/reference/programmable-logic/nexys-a7/nexys-a7_rm.pdf)) directly or via an optional [2x6-pin cable](https://digilent.com/shop/2x6-pin-pmod-cable/) with three dots (or VDD/GND) facing up on both ends. In the game, the board displays the 1st number of a sequence and the user has to correctly input that number. Then, the board displays the first 2 numbers of the sequence and the user has to input those two numbers. This game continues until either the user loses, by inputting the wrong number, or wins, by inputting the entire 8-digit sequence.
 
 ![keypad](kypd.png)
@@ -13,7 +15,9 @@
 
 * The finite-state machine uses a number of variables to keep track of the addition operation
 
-  
+
+## Steps to get project to work
+
 ### 1. Create a new RTL project _hexcalc_ in Vivado Quick Start
 
 * Create three new source files of file type VHDL called **_keypad_**, **_leddec16_**, and **_hexcalc_**
@@ -45,3 +49,11 @@
 * Click 'Program Device' then xc7a100t_0 to download hexcalc.bit to the Nexys A7-100T board
 
 ### 5. Use keypad and buttons
+
+## Inputs and Outputs
+
+## Modifications
+See IntermediaryCodes for detailed steps on how we created the code
+
+## Process
+

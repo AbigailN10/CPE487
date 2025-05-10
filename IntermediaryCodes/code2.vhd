@@ -199,13 +199,11 @@ BEGIN
                     end if;
 			END CASE;
 		END PROCESS;
-
-
--- Add this process after your fsm_process:
+----------------------------------
 display_sync_proc : PROCESS(clk_50MHz)
 BEGIN
   IF rising_edge(clk_50MHz) THEN
-    IF cnt(19) = '1' THEN -- or use led_mpx clock bits
+    IF cnt(19) = '1' THEN
       display_buf <= display;
     END IF;
   END IF;

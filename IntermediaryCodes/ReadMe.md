@@ -6,7 +6,7 @@ Behavior: Our very first attempt. It successfully synthesizes and implements but
 - We took the code from lab 4 and basically rewrote the FSM.
 Issues:
 - Loops: "for i in 1 to stage loop" did not work because stage was a signal, not a constant. We changed it to "for i in 1 to 8 loop" and then added an exit statement. The professor says the loops may be messing with the board behavior so we abandoned the loop in future codes.
-- Delay: We wanted to add a delay between the states for the user to be able to read the numbers correctly, so we added 'wait for' statements. Apparently this is only for simulations, not synthesis.
+- Delay: We wanted to add a delay between the states for the user to have time to read the numbers, so we added 'wait for' statements. Apparently this is only for simulations, not synthesis.
 - Random number generator: Using math library and uniform function. We later found out it always generates the same number and only works for simulations, not synthesis.
 - Vectors: To minimize the number of 'if' statements, we were using vectors to store the generated values and inputed values. We later abondaned this because we have no used vectors before and wanted to use something more familiar to us.
 

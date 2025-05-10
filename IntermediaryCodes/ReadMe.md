@@ -25,7 +25,7 @@ Behavior: The board always shows the 'random' number A.
 Behavior: Displays the sequence 1-by-1 when we press the BTNU button.
 - Since the random number generator does not work, we decided to just display 8 predetermined numbers.
 - We also discovered that we cannot use these two libraries at the same time: USE IEEE.STD_LOGIC_UNSIGNED.ALL; USE IEEE.numeric_std.all;
-- The first library was essential for (, the second library was for converting from integer to unsigned values. Thus, we removed the second library and changed all of our signals from integers to std_logic_vector.
+- The first library was essential for using +. The second library was for converting from integer to unsigned values. Thus, we removed the second library and changed all of our signals from integers to std_logic_vector.
 
 
 ## Code 5

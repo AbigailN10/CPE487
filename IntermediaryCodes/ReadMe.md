@@ -3,6 +3,8 @@ All codes required extensive debugging.
 
 ## Code 1
 Behavior: Our very first attempt. It successfully synthesizes and implements but the board does not behave correctly.
+- We took the code from lab 4 and basically rewrote the FSM.
+Issues:
 - Loops: "for i in 1 to stage loop" did not work because stage was a signal, not a constant. We changed it to "for i in 1 to 8 loop" and then added an exit statement. The professor says the loops may be messing with the board behavior so we abandoned the loop in future codes.
 - Delay: We wanted to add a delay between the states for the user to be able to read the numbers correctly, so we added 'wait for' statements. Apparently this is only for simulations, not synthesis.
 - Random number generator: Using math library and uniform function. We later found out it always generates the same number and only works for simulations, not synthesis.
@@ -22,6 +24,9 @@ Behavior: The board always shows the 'random' number A.
 ## Code 4
 Behavior: Displays the sequence 1-by-1 when we press the BTNU button.
 - Since the random number generator does not work, we decided to just display 8 predetermined numbers.
+- We also discovered that we cannot use these two libraries at the same time: USE IEEE.STD_LOGIC_UNSIGNED.ALL; USE IEEE.numeric_std.all;
+- The first library was essential for (, the second library was for converting from integer to unsigned values. Thus, we removed the second library and changed all of our signals from integers to std_logic_vector.
+
 
 ## Code 5
 Behavior: Board successfully compares the user input to the predetermined numbers.

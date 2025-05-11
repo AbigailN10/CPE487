@@ -18,14 +18,14 @@
   * The variable _user_count_ holds the amount of numbers the user has inputted (pressed on the keypad) for the specific stage.
   * The variable _stage_ holds the current stage/level of the game.
   * The variable _display_ holds the value currently being displayed on the 7-segment displays.
-  * The variable _pr_state_ is the current state of the finite-state machine
+  * The variable _pr_state_ is the current state of the finite-state machine.
 
-Depending on the current state, the machine will react to pushed keypad buttons or operation buttons to update variables, change the output, and select the next state
-* Generally, the "bt_next" (BTNU) is used to progress through the states
-* When the clear button is pushed, the machine enters the CLEAR_ALL state
+Depending on the current state, the machine will react to pushed keypad buttons or operation buttons to update variables, change the output, and select the next state.
+* Generally, the "bt_next" (BTNU) is used to progress through the states.
+* When the clear button is pushed, the machine enters the CLEAR_ALL state.
 * In GEN_NUM
-  * The sequence of numbers is displayed
-  * This state will loop until it reaches the stage
+  * The sequence of numbers is displayed.
+  * This state will loop until it reaches the stage.
   * i.e. First, the stage is 1, so it loops through GEN_NUM once and displays the first number. When the stage is 8, it loops through GEN_NUM 8 times and displays the entire 8-digit sequence.
   * It uses _gen_count_ to know which number to display on the loop. _gen_count_ increases with each loop to allow _Gen_count_ (using the case statement) to display the next number in the sequence.
  * In START_OP

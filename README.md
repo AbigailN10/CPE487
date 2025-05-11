@@ -86,10 +86,10 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 * Press BTNU to continuously advance through the game.
 * Watch the Nexys A7-100T board which will display a sequence of numbers.
 * When the left side of the board displays ‘dddd’, it is time for you to use the keypad.
-* Use the keypad to press the number(s) that was just displayed in order. If you correctly do so, then the Nexys A7-100T board will display ‘0AA0’ meaning success. Press * BTNU to continue playing the game and have the board continue displaying numbers that you will need to input on the keypad.
+* Use the keypad to press the number(s) that was just displayed in order. If you correctly do so, then the Nexys A7-100T board will display ‘0AA0’ meaning success. Press "bt_next" (BTNU) to continue playing the game and have the board continue displaying numbers that you will need to input on the keypad.
 * When the board displays ‘AAAA’, you have reached the end of the game and won.
 * If the board displays ‘FFFF’, you have reached the end of the game and lost.
-* Press BTNC to restart the game.
+* Press "clear" (BTNC) to restart the game.
 
 
 ## Inputs and Outputs

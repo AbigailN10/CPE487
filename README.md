@@ -24,14 +24,14 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 * Generally, the "bt_next" (BTNU) is used to progress through the states
 * When the clear button is pushed, the machine enters the CLEAR_ALL state
 * In GEN_NUM
-  * The sequence of numbers is displayed
-  * This state will loop until it reaches the stage
+  * The sequence of numbers is displayed.
+  * This state will loop until it reaches the stage.
   * i.e. First, the stage is 1, so it loops through GEN_NUM once and displays the first number. When the stage is 8, it loops through GEN_NUM 8 times and displays the entire 8-digit sequence.
   * It uses _gen_count_ to know which number to display on the loop. _gen_count_ increases with each loop to allow _Gen_count_ (using the case statement) to display the next number in the sequence.
  * In START_OP
-  * This state is copied from lab 4.
-  * The machine waits for a keypad button to be pushed.
-  * The board displays 'dddd' to signify to the user to press the keypad.
+     * This state is copied from lab 4.
+     * The machine waits for a keypad button to be pushed.
+     * The board displays 'dddd' to signify to the user to press the keypad.
 * In OP_RELEASE
   * This state is very similar to the one from lab 4.
   * The board displays the button currently pressed on the keypad and waits for the button to release to go to the comparator state.
@@ -42,10 +42,10 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 * In INTER_SUCCESS
   * The board displays '0AA0' to signify a success.
   * The game then continues (after BTNU is pressed) and the next sequence is shown.
-* In 'success'
+* In SUCCCESS
   * This state is the end of the game. The board displays 'AAAA' to signify to the user that they received an A+ for the game :)
   * The user can restart the game by pressing "bt_next" (BTNU) or clear (BTNC).
-* In 'fail'
+* In FAIL
   * This state is the end of the game when the user fails. The board displays 'FFFF' to signal to the user that they received an F grade :(
   * The user can restart the game by pressing BTNU or BTNC.
 

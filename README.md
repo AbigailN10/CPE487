@@ -29,9 +29,9 @@ Depending on the current state, the machine will react to pushed keypad buttons 
   * i.e. First, the stage is 1, so it loops through GEN_NUM once and displays the first number. When the stage is 8, it loops through GEN_NUM 8 times and displays the entire 8-digit sequence.
   * It uses _gen_count_ to know which number to display on the loop. _gen_count_ increases with each loop to allow _Gen_count_ (using the case statement) to display the next number in the sequence.
  * In START_OP
-  * This state is copied from lab 4.
-  * The machine waits for a keypad button to be pushed.
-  * The board displays 'dddd' to signify to the user to press the keypad.
+   * This state is copied from lab 4.
+   * The machine waits for a keypad button to be pushed.
+   * The board displays 'dddd' to signify to the user to press the keypad.
 * In OP_RELEASE
   * This state is very similar to the one from lab 4.
   * The board displays the button currently pressed on the keypad and waits for the button to release to go to the comparator state.

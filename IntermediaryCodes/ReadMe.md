@@ -36,6 +36,7 @@ Behavior: Board successfully compares the user input to the predetermined number
 - One change we made was adding: nx_operand <= operand; and nx_user_count <= user_count; (line 145, 146). But for some reason, this made it worse and now, it would not leave the clear_all state. We removed these lines.
 - With the help of the professor, we expanded the display so that all 8 anodes turn on. The left 4 anodes (display) show the states, success, failure, etc. like before. The right 4 anodes (display2) displays user_count. This helped us determine that user_count was being incremented more than once and we moved user_count so that it incremented in the 'if' statement.
 - There were still some problems so we added lines 145 and 146 again and then it worked successfully.
+- Pressing BTNC only briefly went to the clear_all state and then returning to the previous state. This was resolved in later modifications.
 
 ## Code 6
 Behavior: This was the first successful "simple" game (although it took forever to create). It displays 8 digits and then the user inputs 8 digits. It will show failure or success depending on whether the user correctly input the 8 digit sequence.

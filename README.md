@@ -99,3 +99,7 @@ See IntermediaryCodes for detailed steps on how we created the code
 
 ## Process
 
+Chris: Button press, gen_num, multiple levels, inter-success
+Abigail: Button else statements, Comparator
+Both: Clearing, Success, Failure
+

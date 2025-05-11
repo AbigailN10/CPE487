@@ -9,7 +9,7 @@
   * Creates an instance of the keypad interface and 7-segment decoder interface modules
   * Make connection to the display, buttons, and external keypad
   * Has a timing process to generate [clock signals](https://en.wikipedia.org/wiki/Clock_signal) for the keypad, display multiplexer, and [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine)
-  * Implements a finite-state machine for the operations of the calculator in response to button pushes
+  * Implements a finite-state machine for the operations of the game in response to button pushes
 
 ![FSM](FSM.png)
 

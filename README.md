@@ -109,6 +109,7 @@ Outputs (see SimonSays.xdc)
 * 15 pins for the LED display
 
 How we expanded the display to light up all 8 anodes (instead of 4):
+
 In leddec16.vhd
 * Uncommented lines 47-50 as we now want to use all 8 anodes (instead of just 4)
 

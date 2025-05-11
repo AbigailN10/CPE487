@@ -42,10 +42,10 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 * In INTER_SUCCESS
   * The board displays '0AA0' to signify a success.
   * The game then continues (after BTNU is pressed) and the next sequence is shown.
-* In 'success'
+* In SUCCESS
   * This state is the end of the game. The board displays 'AAAA' to signify to the user that they received an A+ for the game :)
   * The user can restart the game by pressing "bt_next" (BTNU) or clear (BTNC).
-* In 'fail'
+* In FAIL
   * This state is the end of the game when the user fails. The board displays 'FFFF' to signal to the user that they received an F grade :(
   * The user can restart the game by pressing BTNU or BTNC.
 

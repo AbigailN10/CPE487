@@ -113,3 +113,5 @@ Abigail: Button else statements, Comparator
 
 Both: Clearing, Success, Failure
 
+See extra coding process through IntermediaryCodes ReadME
+

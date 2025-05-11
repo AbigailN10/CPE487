@@ -122,6 +122,7 @@ In SimonSays.vhd
 
 ## Video
 See SuccessfulGame1.mov for video of the board working in action.
+
 Note: GitHub only allows files up to 25MB. To see full video (with example of pressing BTNC to restart the game), see the slideshow submitted for the presentation.
 
 ## Modifications

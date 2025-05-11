@@ -93,6 +93,10 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 
 
 ## Inputs and Outputs
+- Connected our code - SimonSays to Lab 4's leddec and keypad code along with using most of the constraints file
+- Outputs displayed on the LED
+  - We used both sides of the LED while the original calculator code only used one
+- Gathering inputs from the keypad
 
 ## Video
 See SuccessfulGame1.mov for video of the board working in action.

@@ -13,7 +13,41 @@
 
 ![FSM](FSM.png)
 
-* The finite-state machine uses a number of variables to keep track of the addition operation
+* The finite-state machine uses a number of variables to keep track of which numbers to display whether the user succeeds or fails at the game.
+  * The variable _gen_num_ holds the amount of numbers that have been generated for the specific stage.
+  * The variable _user_count_ holds the amount of numbers the user has inputted (pressed on the keypad) for the specific stage.
+  * The variable _stage_ holds the current stage/level of the game.
+  * The variable _display_ holds the value currently being displayed on the 7-segment displays.
+  * The variable _pr_state_ is the current state of the finite-state machine
+
+Depending on the current state, the machine will react to pushed keypad buttons or operation buttons to update variables, change the output, and select the next state
+* Generally, the "bt_next" (BTNU) is used to progress through the states
+* When the clear button is pushed, the machine enters the CLEAR_ALL state
+* In GEN_NUM
+  * The sequence of numbers is displayed
+  * This state will loop until it reaches the stage
+  * i.e. First, the stage is 1, so it loops through GEN_NUM once and displays the first number. When the stage is 8, it loops through GEN_NUM 8 times and displays the entire 8-digit sequence.
+  * It uses _gen_count_ to know which number to display on the loop. _gen_count_ increases with each loop to allow _Gen_count_ (using the case statement) to display the next number in the sequence.
+ * In START_OP
+  * This state is copied from lab 4.
+  * The machine waits for a keypad button to be pushed.
+  * The board displays 'dddd' to signify to the user to press the keypad.
+* In OP_RELEASE
+  * This state is very similar to the one from lab 4.
+  * The board displays the button currently pressed on the keypad and waits for the button to release to go to the comparator state.
+* In COMPARATOR
+  * This state determines whether it is a success for the stage, a failure, or more numbers need to be pressed.
+  * When the correct number is pressed, the machine checks if user_count  = stage+1 to determine if it is at the end of the sequence for the current stage. This is because _user_count_ is incremented in START_OP but _stage_ is incremented in INTER_SUCCESS, so _user_count_ needs to be one more than _stage_.
+  * If the wrong number is pressed, it is a failure and the next state is FAIL.
+* In INTER_SUCCESS
+  * The board displays '0AA0' to signify a success.
+  * The game then continues (after BTNU is pressed) and the next sequence is shown.
+* In 'success'
+  * This state is the end of the game. The board displays 'AAAA' to signify to the user that they received an A+ for the game :)
+  * The user can restart the game by pressing "bt_next" (BTNU) or clear (BTNC).
+* In 'fail'
+  * This state is the end of the game when the user fails. The board displays 'FFFF' to signal to the user that they received an F grade :(
+  * The user can restart the game by pressing BTNU or BTNC.
 
 
 ## Steps to get project to work
@@ -28,9 +62,9 @@
 
 * Click 'Finish'
 
-* Click design sources and copy the VHDL code from keypad.vhd, leddec16.vhd, and hexcalc.vhd
+* Click design sources and copy the VHDL code from keypad.vhd, leddec16.vhd, and SimonSays.vhd
 
-* Click constraints and copy the code from hexcalc.xdc
+* Click constraints and copy the code from SimonSays.xdc
 
 * As an alternative, you can instead download files from Github and import them into your project when creating the project. The source file or files would still be imported during the Source step, and the constraint file or files would still be imported during the Constraints step.
 

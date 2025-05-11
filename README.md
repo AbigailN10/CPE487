@@ -131,13 +131,13 @@ See IntermediaryCodes for detailed steps on how we created the code
 ## Process
 
 Timeline:
-* April 22: (All) Brainstorming, creating FSM
-* April 24 - April 29: (All) Writing Code 1
-* May 1: (All) Writing code 2
+* April 22 - 23: (All) Brainstorming, creating FSM
+* April 24 - April 30: (All) Writing Code 1
+* May 1 - 5: (All) Writing code 2
 * May 6: (All) Writing code 3
 * May 7 - 8: (All) Writing code 4 and 5, (Abigail) writing code 6
 * May 9: (Chris) Writing code 7
-* May 10: (All) Writing presentation and updating GitHub
+* May 10 - 11: (All) Writing presentation and updating GitHub
 * May 12: (All) Presentation 
 
 Chris specifically laid the groundwork for state GEN_NUM, wrote all of code 7 which added complexity to the game by having multiple levels, and created the additional INTER_SUCCESS state to specify that the user reached the end of the level and not the end of the game.

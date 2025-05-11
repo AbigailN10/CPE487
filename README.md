@@ -130,11 +130,21 @@ See IntermediaryCodes for detailed steps on how we created the code
 
 ## Process
 
-Chris: Button press, gen_num, multiple levels, inter-success
+Timeline:
+* April 22: (All) Brainstorming, creating FSM
+* April 24 - April 29: (All) Writing Code 1
+* May 1: (All) Writing code 2
+* May 6: (All) Writing code 3
+* May 7 - 8: (All) Writing code 4 and 5, (Abigail) writing code 6
+* May 9: (Chris) Writing code 7
+* May 10: (All) Writing presentation and updating GitHub
+* May 12: (All) Presentation 
 
-Abigail: Button else statements, Comparator
+Chris specifically laid the groundwork for state GEN_NUM, wrote all of code 7 which added complexity to the game by having multiple levels, and created the additional INTER_SUCCESS state to specify that the user reached the end of the level and not the end of the game.
 
-Both: Clearing, Success, Failure
+Abigail specifically discovered the need for ‘else’ statements, finished troubleshooting code 5 and integrated code 4 and code 5 into a single simple game seen in code 6.
+
+Everything else was written collaboratively.
 
 See extra coding process through IntermediaryCodes ReadME
 

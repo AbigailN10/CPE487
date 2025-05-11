@@ -99,6 +99,26 @@ Depending on the current state, the machine will react to pushed keypad buttons 
   - We used both sides of the LED while the original calculator code only used one
 - Gathering inputs from the keypad
 
+Inputs from the board (see SimonSays.xdc)
+* PIN E3: The clock on the board, renamed as “clk_50MHz”.
+* PIN N17: The BTNC button on the board, renamed as “bt_clear”.
+* PIN M18: The BTNU button on the board, renamed as “bt_next”.
+
+Outputs (see SimonSays.xdc)
+* 8 pins for Pmod Header JA which are connected to the keypad
+* 15 pins for the LED display
+
+How we expanded the display to light up all 8 anodes (instead of 4):
+In leddec16.vhd
+* Uncommented lines 47-50 as we now want to use all 8 anodes (instead of just 4)
+
+In SimonSays.vhd
+* Using all 8 anodes (instead of 4)
+   * Created new signals called _display2_ and _display3_
+   * Combine _display_ and _display2_ into _display3_. This allowed us to modify _display_ (the 4 left anodes) and _display2_ (the 4 right anodes) independently.
+   * Connect _display3_ to _data_ from leddec16.vhd
+   * Change_data_ to be from (15 downto 0) to (31 downto 0). _data_ needs to be twice as big because it holds twice the amount of information: information from _display_ and now information from _display2_ too.
+
 ## Video
 See SuccessfulGame1.mov for video of the board working in action.
 Note: GitHub only allows files up to 25MB. To see full video (with example of pressing BTNC to restart the game), see the slideshow submitted for the presentation.

@@ -3,6 +3,7 @@
 ## Expected behavior of code
 * Program the FPGA on the Nexys A7-100T board to function as a Simon Says game using a 16-button keypad module ([Pmod KYPD](https://store.digilentinc.com/pmod-kypd-16-button-keypad/)) connected to the Pmod port JA (See Section 10 of the [Reference Manual](https://reference.digilentinc.com/_media/reference/programmable-logic/nexys-a7/nexys-a7_rm.pdf)) directly or via an optional [2x6-pin cable](https://digilent.com/shop/2x6-pin-pmod-cable/) with three dots (or VDD/GND) facing up on both ends. In the game, the board displays the 1st number of a sequence and the user has to correctly input that number. Then, the board displays the first 2 numbers of the sequence and the user has to input those two numbers. This game continues until either the user loses, by inputting the wrong number, or wins, by inputting the entire 8-digit sequence.
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Simon_Electronic_Game.jpg" width=300>
 ![keypad](kypd.png)
 
 * The top level source module is called **_SimonSays_** that
@@ -10,7 +11,6 @@
   * Make connection to the display, buttons, and external keypad
   * Has a timing process to generate [clock signals](https://en.wikipedia.org/wiki/Clock_signal) for the keypad, display multiplexer, and [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine)
   * Implements a finite-state machine for the operations of the game in response to button pushes
-
 ![FSM](FSM.png)
 
 * The finite-state machine uses a number of variables to keep track of which numbers to display whether the user succeeds or fails at the game.

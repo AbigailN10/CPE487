@@ -2,7 +2,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-ENTITY hexcalc IS
+ENTITY SimonSays IS
 	PORT (
 		clk_50MHz : IN STD_LOGIC; -- system clock (50 MHz)
 		SEG7_anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); -- anodes of eight 7-seg displays
@@ -11,9 +11,9 @@ ENTITY hexcalc IS
 		bt_next : in std_logic;
 		KB_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad column pins
 	KB_row : IN STD_LOGIC_VECTOR (4 DOWNTO 1)); -- keypad row pins
-END hexcalc;
+END SimonSays;
 	
-ARCHITECTURE Behavioral OF hexcalc IS
+ARCHITECTURE Behavioral OF SimonSays IS
 	COMPONENT keypad IS
 		PORT (
 			samp_ck : IN STD_LOGIC;

@@ -144,9 +144,12 @@ How we added the LEDs:
 
 ## Video
 See SuccessfulGame1.mov for video of the board working in action.
+
 See SuccessfulGameWithLEDS.mov for video of the board working with the LEDs.
 
-Note: GitHub only allows files up to 25MB. To see full video (with example of pressing BTNC to restart the game), see the slideshow submitted for the presentation.
+See Reset.mov for video of the board properly resetting after pressing BTNC.
+
+Note: GitHub only allows files up to 25MB so the demonstration is broken up into 3 seperate videos.
 
 ## Modifications
 See IntermediaryCodes for detailed steps on how we created the code.
@@ -162,7 +165,7 @@ Timeline:
 * May 9: (Chris) Writing code 7
 * May 10 - 11: (All) Writing presentation and updating GitHub
 * May 12: (All) Presentation
-* May 13: (ALL) Final editing of GitHub
+* May 13: (ALL) Writing code 8 and final editing of GitHub
 
 Chris specifically laid the groundwork for state GEN_NUM, wrote all of code 7 which added complexity to the game by having multiple levels, and created the additional INTER_SUCCESS state to specify that the user reached the end of the level and not the end of the game.
 

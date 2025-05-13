@@ -16,7 +16,7 @@
 
 
 * The top level source module is called **_SimonSays_** that
-  * Creates an instance of the keypad interface and 7-segment decoder interface modules
+  * Creates an instance of the keypad interface, 7-segment decoder interface, and LEDs instance modules
   * Make connection to the display, buttons, and external keypad
   * Has a timing process to generate [clock signals](https://en.wikipedia.org/wiki/Clock_signal) for the keypad, display multiplexer, and [finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine)
   * Implements a finite-state machine for the operations of the game in response to button pushes
@@ -63,7 +63,7 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 
 ### 1. Create a new RTL project _hexcalc_ in Vivado Quick Start
 
-* Create three new source files of file type VHDL called **_keypad_**, **_leddec16_**, and **_SimonSays_**
+* Create three new source files of file type VHDL called **_keypad_**, **_leddec16_**, **_stage_**, and **_SimonSays_**
 
 * Create a new constraint file of file type XDC called **_SimonSays_**
 
@@ -99,12 +99,12 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 * When the board displays ‘AAAA’, you have reached the end of the game and won.
 * If the board displays ‘FFFF’, you have reached the end of the game and lost.
 * Press "clear" (BTNC) to restart the game.
+* Check which level you are on by looking at the LEDs. The first LED (LED0) will light up when you are on the first level, and the last LED (LED7) will light up when you are on the last level (level 8).
 
 
 ## Inputs and Outputs
 - Connected our code - SimonSays to Lab 4's leddec and keypad code along with using most of the constraints file
 - Outputs displayed on the LED
-  - We used both sides of the LED while the original calculator code only used one
 - Gathering inputs from the keypad
 
 Inputs from the board (see SimonSays.xdc)
@@ -118,6 +118,10 @@ Inputs from the board (see SimonSays.xdc)
 Outputs (see SimonSays.xdc)
 * 8 pins for Pmod Header JA which are connected to the keypad
   * Keypad is used to input numbers based on the sequence shown on the board.
+* 7 pins for the segments and 8 pins for the anodes on the board
+  * Anodes are used to tell the user the sequence that the user must input and whether they succeeded or failed.
+* 8 pins for the LEDs
+  * LEDs are used to tell the user what state/level they are on.
 
 How we expanded the display to light up all 8 anodes (instead of 4):
   * In leddec16.vhd
@@ -128,8 +132,19 @@ How we expanded the display to light up all 8 anodes (instead of 4):
      * Connect _display3_ to _data_ from leddec16.vhd.
      * Change_data_ to be from (15 downto 0) to (31 downto 0). _data_ needs to be twice as big because it holds twice the amount of information: information from _display_ and now information from _display2_ too.
 
+How we added the LEDs:
+- We added 8 LEDs in the constraints file.
+- We created a new source file called _stage_.
+   * This source file was written similarly to _leddec_. It has an 'in port' to take in the stage and an 'out port' to output the stage to the LEDs.
+   * The LEDs light up based on the stage/level the user is at.
+- In SimonSays.vhd
+   * In the entity, LED was added as an output port. LED is an 8-bit array because 8 LEDs are used
+   * The component stage1 was added.
+   * In the port mapping, stage connects to stage and LED connects to LED.
+
 ## Video
 See SuccessfulGame1.mov for video of the board working in action.
+See SuccessfulGameWithLEDS.mov for video of the board working with the LEDs.
 
 Note: GitHub only allows files up to 25MB. To see full video (with example of pressing BTNC to restart the game), see the slideshow submitted for the presentation.
 

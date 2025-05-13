@@ -36,7 +36,7 @@ ARCHITECTURE Behavioral OF SimonSays IS
 	COMPONENT stage1 IS
 		PORT (
 			STAGE : IN std_logic_vector (4 downto 0);
-            LED : OUT Std_logic_vector (7 downto 0)
+            		LED : OUT Std_logic_vector (7 downto 0)
 		);
 	END COMPONENT;
 	

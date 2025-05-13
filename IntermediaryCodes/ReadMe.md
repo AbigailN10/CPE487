@@ -50,7 +50,7 @@ Behavior: This was the first successful "simple" game (although it took forever 
  - We added the inter_success state to display '0AA0', differentiating between the end of a level and the end of the game.
 
 ## Code 8
-Behavior: This is similar to code 7, except now the LEDs are included.
+Behavior: This is similar to code 7, except now the LEDs are included. This is the final code (see FinalCode folder)!
 - We added 8 LEDs in the constraints file.
 - We created a new source file called _stage_.
    * This source file was written similarly to _leddec_. It has an 'in port' to take in the stage and an 'out port' to output the stage to the LEDs.

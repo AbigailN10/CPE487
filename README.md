@@ -7,6 +7,13 @@
 
 ![keypad](kypd.png)
 
+### Necessary Hardware
+* Nexys A7-100T FPGA Board
+* Computer with Vivado installed
+* Micro-USB cable
+* 4x4 Keypad
+* Optional 2x6 pin cable
+
 * The top level source module is called **_SimonSays_** that
   * Creates an instance of the keypad interface and 7-segment decoder interface modules
   * Make connection to the display, buttons, and external keypad
@@ -81,7 +88,7 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 
 * Click 'Open Hardware Manager' and click 'Open Target' then 'Auto Connect'
 
-* Click 'Program Device' then xc7a100t_0 to download hexcalc.bit to the Nexys A7-100T board
+* Click 'Program Device' then xc7a100t_0 to download SimonSays.bit to the Nexys A7-100T board
 
 ### 5. Use keypad and buttons
 * Press BTNU to continuously advance through the game.

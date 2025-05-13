@@ -7,6 +7,7 @@ ENTITY SimonSays IS
 		clk_50MHz : IN STD_LOGIC; -- system clock (50 MHz)
 		SEG7_anode : OUT STD_LOGIC_VECTOR (7 DOWNTO 0); -- anodes of eight 7-seg displays
 		SEG7_seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0); -- common segments of 7-seg displays
+		LED : OUT Std_logic_vector (7 downto 0); 
 		bt_clr : IN STD_LOGIC; -- calculator "clear" button
 		bt_next : in std_logic;
 		KB_col : OUT STD_LOGIC_VECTOR (4 DOWNTO 1); -- keypad column pins
@@ -31,6 +32,14 @@ ARCHITECTURE Behavioral OF SimonSays IS
 			seg : OUT STD_LOGIC_VECTOR (6 DOWNTO 0)
 		);
 	END COMPONENT;
+	
+	COMPONENT stage1 IS
+		PORT (
+			STAGE : IN std_logic_vector (4 downto 0);
+            LED : OUT Std_logic_vector (7 downto 0)
+		);
+	END COMPONENT;
+	
 	SIGNAL cnt : std_logic_vector(100 DOWNTO 0); -- counter to generate timing signals. Changed from 20 to 32 to make a slower clock
 	SIGNAL kp_clk, kp_hit, sm_clk : std_logic;
 	SIGNAL kp_value : std_logic_vector (3 DOWNTO 0);
@@ -81,10 +90,16 @@ BEGIN
 		samp_ck => kp_clk, col => KB_col, 
 		row => KB_row, value => kp_value, hit => kp_hit
 		);
-		led1 : leddec16
-		PORT MAP(
+	
+	led1 : leddec16
+	PORT MAP(
 			dig => led_mpx, data => display3, 
 			anode => SEG7_anode, seg => SEG7_seg
+		);
+		
+	s1 : stage1
+	PORT MAP(
+            stage => stage, LED =>LED
 		);
 		
 		clock_process : PROCESS (bt_clr, sm_clk) -- state machine clock process
@@ -123,8 +138,8 @@ BEGIN
 						nx_state <= clear_all;
 				end if;
 				WHEN gen_num =>  -- generate random number
-                    			case gen_count is
-                      				when "00001" =>
+                    		case gen_count is
+                      			when "00001" =>
                            				display <= X"0008";
                        			when "00010" =>
                            				display <= X"0001";

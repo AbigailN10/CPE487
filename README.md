@@ -109,24 +109,24 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 
 Inputs from the board (see SimonSays.xdc)
 * PIN E3: The clock on the board, renamed as “clk_50MHz”.
+  * Used to control the timing of the game.
 * PIN N17: The BTNC button on the board, renamed as “bt_clear”.
+  * Used to reset the game when pressed and go to the CLEAR_ALL state.
 * PIN M18: The BTNU button on the board, renamed as “bt_next”.
+  * Used to advance through the game (from CLEAR_ALL state to GEN_NUM to START_OP, and from SUCCESS/FAIL/INTER_SUCCESS to CLEAR_ALL state).
 
 Outputs (see SimonSays.xdc)
 * 8 pins for Pmod Header JA which are connected to the keypad
-* 15 pins for the LED display
+  * Keypad is used to input numbers based on the sequence shown on the board.
 
 How we expanded the display to light up all 8 anodes (instead of 4):
-
-In leddec16.vhd
-* Uncommented lines 47-50 as we now want to use all 8 anodes (instead of just 4).
-
-In SimonSays.vhd
-* Using all 8 anodes (instead of 4)
-   * Created new signals called _display2_ and _display3_
-   * Combine _display_ and _display2_ into _display3_. This allowed us to modify _display_ (the 4 left anodes) and _display2_ (the 4 right anodes) independently.
-   * Connect _display3_ to _data_ from leddec16.vhd.
-   * Change_data_ to be from (15 downto 0) to (31 downto 0). _data_ needs to be twice as big because it holds twice the amount of information: information from _display_ and now information from _display2_ too.
+  * In leddec16.vhd
+     * Uncommented lines 47-50 as we now want to use all 8 anodes (instead of just 4).
+  * In SimonSays.vhd
+     * Created new signals called _display2_ and _display3_
+     * Combine _display_ and _display2_ into _display3_. This allowed us to modify _display_ (the 4 left anodes) and _display2_ (the 4 right anodes) independently.
+     * Connect _display3_ to _data_ from leddec16.vhd.
+     * Change_data_ to be from (15 downto 0) to (31 downto 0). _data_ needs to be twice as big because it holds twice the amount of information: information from _display_ and now information from _display2_ too.
 
 ## Video
 See SuccessfulGame1.mov for video of the board working in action.
@@ -146,11 +146,12 @@ Timeline:
 * May 7 - 8: (All) Writing code 4 and 5, (Abigail) writing code 6
 * May 9: (Chris) Writing code 7
 * May 10 - 11: (All) Writing presentation and updating GitHub
-* May 12: (All) Presentation 
+* May 12: (All) Presentation
+* May 13: (ALL) Final editing of GitHub
 
 Chris specifically laid the groundwork for state GEN_NUM, wrote all of code 7 which added complexity to the game by having multiple levels, and created the additional INTER_SUCCESS state to specify that the user reached the end of the level and not the end of the game.
 
-Abigail specifically discovered the need for ‘else’ statements, finished troubleshooting code 5 and integrated code 4 and code 5 into a single simple game seen in code 6.
+Abigail specifically discovered the need for ‘else’ statements, finished troubleshooting code 5, and integrated code 4 and code 5 into a single simple game seen in code 6.
 
 Everything else was written collaboratively.
 

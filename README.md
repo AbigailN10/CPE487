@@ -61,7 +61,7 @@ Depending on the current state, the machine will react to pushed keypad buttons 
 
 ## Steps to get project to work
 
-### 1. Create a new RTL project _hexcalc_ in Vivado Quick Start
+### 1. Create a new RTL project _SimonSays_ in Vivado Quick Start
 
 * Create three new source files of file type VHDL called **_keypad_**, **_leddec16_**, **_stage_**, and **_SimonSays_**
 

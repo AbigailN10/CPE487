@@ -45,6 +45,16 @@ Behavior: This was the first successful "simple" game (although it took forever 
 - The one exception is in the gen_num state which had the opposite behavior for some reason. Trying to use bt_next and having an else statement made the board behave unexpectedly so we kept bt_next_edge and removed the else statement.
 
  ## Code 7
- This is the final code (see keypad.vhd)!
+ Behavior: This is a more complex game with 8 levels. 
  - We added the stage signal to determine which stage (like levels in a video game) we were at.
  - We added the inter_success state to display '0AA0', differentiating between the end of a level and the end of the game.
+
+## Code 8
+Behavior: This is similar to code 7, except now the LEDs are included.
+- We created a new source file called _stage_.
+- This source file was written similarly to _leddec_. It has an 'in port' to take in the stage and an 'out port' to output the stage to the LEDs.
+- The LEDs light up based on the stage/level the user is at.
+- In SimonSays.vhd
+   * In the entity, LED was added as an output port. LED is an 8-bit array because 8 LEDs are used
+   * The component stage1 was added.
+   * In the port mapping, stage connects to stage and LED connects to LED.

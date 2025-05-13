@@ -51,9 +51,10 @@ Behavior: This was the first successful "simple" game (although it took forever 
 
 ## Code 8
 Behavior: This is similar to code 7, except now the LEDs are included.
+- We added 8 LEDs in the constraints file.
 - We created a new source file called _stage_.
-- This source file was written similarly to _leddec_. It has an 'in port' to take in the stage and an 'out port' to output the stage to the LEDs.
-- The LEDs light up based on the stage/level the user is at.
+   * This source file was written similarly to _leddec_. It has an 'in port' to take in the stage and an 'out port' to output the stage to the LEDs.
+   * The LEDs light up based on the stage/level the user is at.
 - In SimonSays.vhd
    * In the entity, LED was added as an output port. LED is an 8-bit array because 8 LEDs are used
    * The component stage1 was added.
